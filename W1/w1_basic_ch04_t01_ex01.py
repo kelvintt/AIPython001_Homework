@@ -6,8 +6,13 @@
 # 方法：设置应用的各个属性的set_app_info方法；获取各属性值的get_app_info方法。
 
 class MobileApp:
-    # 设置一个方法来设置 app 的各个属性
-    def set_app_info(self, app_name, download_count, rating):
+    def __init__(self, app_name, download_count, rating):
+        self.app_name = app_name
+        self.download_count = download_count
+        self.rating = rating
+    
+    # 设置一个方法，来设置应用的各个属性
+    def set_spp_info(self, app_name, download_count, rating):
         self.app_name = app_name
         self.download_count = download_count
         self.rating = rating
@@ -18,11 +23,13 @@ class MobileApp:
         return app_info.title()
 
 # 实例一
-app_01 = MobileApp()
-app_01.set_app_info("wechat", 9527, 5.0)
+app_01 = MobileApp("wechat", 9527, 5.0)
+print(app_01.get_app_info())
+app_01.set_spp_info("youchat", 17000, 2.0)
 print(app_01.get_app_info())
 
 # 实例二
-app_02 = MobileApp()
-app_02.set_app_info("edge", 2897, 4.0)
+app_02 = MobileApp("edge", 2897, 4.0)
+print(app_02.get_app_info())
+app_02.set_spp_info("chrome", 847000, 9.0)
 print(app_02.get_app_info())
